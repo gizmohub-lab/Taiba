@@ -1,110 +1,223 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
-*{
-  margin: 0;
-  padding: 0;
-  font-family: roboto;
-}
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* { box-sizing: border-box; }
 body{
-  background: #000;
+  background-color: black;
+}
+.container {
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+.title{
+    display: flex;
+    font-size: 45px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    color: rgb(255, 255, 255);
+    font-family: poppins;
+    display: flex;
+    margin-bottom: -25px;
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+      background-image: 
+        url("data:image/svg+xml,%3Csvg width='2250' height='900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill='%2300A080' d='M0 0h2255v899H0z'/%3E%3Ccircle cx='366' cy='207' r='366' fill='%2300FDCF'/%3E%3Ccircle cx='1777.5' cy='318.5' r='477.5' fill='%2300FDCF'/%3E%3Ccircle cx='1215' cy='737' r='366' fill='%23008060'/%3E%3C/g%3E%3C/svg%3E%0A");
+      background-size: 100% auto;
+      background-position: center;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
 }
 
-.cont{
-  width: 93%;
-  max-width: 350px;
-  text-align: center;
-  margin: 4% auto;
-  padding: 30px 0;
-  background: #111;
-  color: #EEE;
-  border-radius: 5px;
-  border: thin solid #444;
-  overflow: hidden;
+
+H1 span{
+    color: orangered;
+    font-weight: 200;
+}
+.no1{
+  font-family: poppins;
+  color: black;
+  font-weight: 600;
+  font-size: 32px;
+  margin-right: 33px;
+  justify-content: center;
+    align-items: center;
 }
 
-hr{
-  margin: 20px;
-  border: none;
-  border-bottom: thin solid rgba(255,255,255,.1);
-}
 
-div.title{
-  font-size: 2em;
-}
+h3 span{
+  color: orangered;
 
-h1 span{
+}
+.nam{
+  font-family: poppins;
   font-weight: 300;
-  color: #Fd4;
+  font-size: 16px;
+  align-items: center;
+}
+h6 span{
+  color: orangered;
+}
+.name{
+  font-size: 22px;
+  font-family: poppins;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+}
+.rating {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  height: 150px;
+  position: relative;
 }
 
-div.stars{
-  width: 270px;
-  display: inline-block;
+.rating-0 {
+  filter: grayscale(100%);
 }
 
-input.star{
+.rating > input {
   display: none;
 }
 
-label.star {
-  float: right;
-  padding: 10px;
-  font-size: 36px;
-  color: #444;
-  transition: all .2s;
+.rating > label {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-top: auto;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 76%;
+  transition: .3s;
 }
 
-input.star:checked ~ label.star:before {
-  content:'\f005';
-  color: #FD4;
-  transition: all .25s;
+.rating > input:checked ~ label,
+.rating > input:checked ~ label ~ label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
 }
 
 
-input.star-5:checked ~ label.star:before {
-  color:#FE7;
-  text-shadow: 0 0 20px #952;
+.rating > input:not(:checked) ~ label:hover,
+.rating > input:not(:checked) ~ label:hover ~ label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
 }
 
-input.star-1:checked ~ label.star:before {
-  color: #F62;
-}
-
-label.star:hover{
-  transform: rotate(-15deg) scale(1.3);
-}
-
-label.star:before{
-  content:'\f006';
-  font-family: FontAwesome;
-}
-
-.rev-box{
-  overflow: hidden;
-  height: 0;
+.emoji-wrapper {
   width: 100%;
-  transition: all .25s;
-}
-
-textarea.review{
-  background: #222;
-  border: none;
-  width: 100%;
-  max-width: 100%;
+  text-align: center;
   height: 100px;
-  padding: 10px;
-  box-sizing: border-box;
-  color: #EEE;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-label.review{
-  display: block;
-  transition:opacity .25s;
+.emoji-wrapper:before,
+.emoji-wrapper:after{
+  content: "";
+  height: 15px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
 }
 
-
-
-input.star:checked ~ .rev-box{
-  height: 125px;
-  overflow: visible;
+.emoji-wrapper:before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 35%,rgba(255,255,255,0) 100%);
 }
+
+.emoji-wrapper:after{
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 35%,rgba(255,255,255,0) 100%);
+}
+
+.emoji {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .3s;
+}
+
+.emoji > svg {
+  margin: 15px 0; 
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+#rating-1:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-2:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-3:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-4:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-5:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
+
+#rating-6:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-7:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-8:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-9:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-10:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px);}
+
+#rating-11:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-12:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-13:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-14:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-15:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
+
+#rating-16:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-17:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-18:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-19:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-20:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
+
+#rating-21:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-22:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-23:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-24:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-25:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
+
+#rating-26:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-27:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-28:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-29:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-30:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px);}
+
+#rating-31:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-32:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-33:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-34:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-35:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
+
+#rating-36:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
+#rating-37:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
+#rating-38:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
+#rating-39:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
+#rating-40:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px);}
+
+
+
+
+.feedback {
+  max-width: 360px;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: 0 4px 30px rgba(0,0,0,.05);
+  margin-top: -344px;
+ 
+}
+
